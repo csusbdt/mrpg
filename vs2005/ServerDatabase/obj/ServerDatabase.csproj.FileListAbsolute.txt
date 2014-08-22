@@ -1,0 +1,6 @@
+C:\_\mrpg\vs2005\ServerDatabase\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\vs2005\ServerDatabase\bin\Debug\ServerDatabase.dll
+C:\_\mrpg\vs2005\ServerDatabase\bin\Debug\ServerDatabase.pdb
+C:\_\mrpg\vs2005\ServerDatabase\bin\Debug\MySql.Data.dll
+C:\_\mrpg\vs2005\ServerDatabase\obj\Debug\ServerDatabase.dll
+C:\_\mrpg\vs2005\ServerDatabase\obj\Debug\ServerDatabase.pdb

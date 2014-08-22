@@ -1,0 +1,159 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+using System.Net.Sockets;
+using System.IO;
+
+namespace Client
+{
+    class CommunicationSystem
+    {
+        #region Fields
+
+        static Thread incomingMessagesThread;
+        static TcpClient tcpClient;
+        static BinaryWriter binaryWriter;
+        static BinaryReader binaryReader;
+        static List<Message> incomingMessageQueue = new List<Message>();
+        static bool isConnected = false;
+
+        #endregion
+
+        #region Life Cycle
+
+        public static void Connect()
+        {
+            tcpClient = new TcpClient();
+            tcpClient.Connect(Configuration.ServerAddress, Configuration.ServerPort);
+            NetworkStream networkStream = tcpClient.GetStream();
+            BufferedStream bufferedStream = new BufferedStream(networkStream);
+            binaryWriter = new BinaryWriter(bufferedStream);
+            binaryReader = new BinaryReader(bufferedStream);
+            ThreadStart threadStart = new ThreadStart(queueUpIncomingMessages);
+            incomingMessagesThread = new Thread(threadStart);
+            incomingMessagesThread.Start();
+            isConnected = true;
+        }
+
+        public static void Disconnect()
+        {
+            if (!isConnected)
+            {
+                return;
+            }
+            isConnected = false;
+            binaryWriter.Close();
+            binaryReader.Close();
+            tcpClient.Close();
+            binaryWriter = null;
+            binaryReader = null;
+            tcpClient = null;
+        }
+
+        public static Message GetNextMessage()
+        {
+            if (incomingMessageQueue.Count == 0)
+            {
+                return null;
+            }
+            Message message = null;
+            lock (incomingMessageQueue)
+            {
+                message = incomingMessageQueue[0];
+                incomingMessageQueue.RemoveAt(0);
+            }
+//            Log.Write("Popping message: " + message.GetType().Name);
+            return message;
+        }
+
+        #endregion
+
+        #region Outgoing Messages
+
+        public static void SendLoginMessage(string username, string password)
+        {
+            binaryWriter.Write("login");
+            binaryWriter.Write(username);
+            binaryWriter.Write(password);
+            binaryWriter.Flush();
+        }
+
+        public static void SendLogoutMessage()
+        {
+            binaryWriter.Write("logout");
+            binaryWriter.Flush();
+        }
+
+        public static void SendAvatarSelectMessage(Avatar avatar)
+        {
+            binaryWriter.Write("avatar_select");
+            binaryWriter.Write(avatar.AvatarId);
+            binaryWriter.Flush();
+        }
+
+        public static void SendExitGamePlayMessage()
+        {
+            binaryWriter.Write("exit");
+            binaryWriter.Flush();
+        }
+
+        #endregion
+
+        #region Incomming Messages
+
+        static void queueUpIncomingMessages()
+        {
+            while (isConnected)
+            {
+                Message message = null;
+                try
+                {
+                    message = ReadMessage();
+                }
+                catch (SocketException se)
+                {
+                    if (!isConnected)
+                    {
+                        // Main thread closed socket; don't log exception.
+                        return;
+                    }
+                    throw se;
+                }
+                catch (IOException ioe)
+                {
+                    if (!isConnected)
+                    {
+                        // Main thread closed socket; don't log exception.
+                        return;
+                    }
+                      throw ioe;
+                }
+                lock (incomingMessageQueue)
+                {
+                    incomingMessageQueue.Add(message);
+                }
+            }
+        }
+
+        static Message ReadMessage()
+        {
+            string messageType = binaryReader.ReadString();
+//            Log.Write("Message received of type " + messageType);
+            switch (messageType)
+            {
+                case "success": return SuccessMessage.Read(binaryReader);
+                case "failure": return FailureMessage.Read(binaryReader);
+                case "avatar_list": return AvatarListMessage.Read(binaryReader);
+                case "set_map": return SetMapMessage.Read(binaryReader);
+                case "create_entity": return CreateEntityMessage.Read(binaryReader);
+                case "delete_entity": return DeleteEntityMessage.Read(binaryReader);
+                case "move_entity": return MoveEntityMessage.Read(binaryReader);
+                case "move_avatar": return MoveAvatarMessage.Read(binaryReader);
+                default: throw new Exception("Invalid message from server.");
+            }
+        }
+
+        #endregion
+    }
+}

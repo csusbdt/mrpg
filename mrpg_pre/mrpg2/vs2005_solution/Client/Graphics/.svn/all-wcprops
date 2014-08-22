@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/mrpg2/!svn/ver/10/vs2005_solution/Client/Graphics
+END
+Entity.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/mrpg2/!svn/ver/5/vs2005_solution/Client/Graphics/Entity.cs
+END
+Map.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/mrpg2/!svn/ver/5/vs2005_solution/Client/Graphics/Map.cs
+END
+Avatar.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/mrpg2/!svn/ver/10/vs2005_solution/Client/Graphics/Avatar.cs
+END
+MapComponent.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/mrpg2/!svn/ver/5/vs2005_solution/Client/Graphics/MapComponent.cs
+END
+GraphicsSystem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/5/vs2005_solution/Client/Graphics/GraphicsSystem.cs
+END
+Camera.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/mrpg2/!svn/ver/5/vs2005_solution/Client/Graphics/Camera.cs
+END

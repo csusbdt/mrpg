@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+
+namespace Client
+{
+    class AvatarListMessage : Message
+    {
+        List<Avatar> avatars = new List<Avatar>();
+
+        public List<Avatar> AvatarList
+        {
+            get { return avatars; }
+        }
+
+        AvatarListMessage()
+        {
+        }
+
+        public override bool IsGamePlayMessage
+        {
+            get { return false; }
+        }
+
+        public AvatarListMessage(List<Avatar> avatars) 
+        {
+            this.avatars = avatars;
+        }
+
+        #region Read
+
+        public static Message Read(BinaryReader binaryReader)
+        {
+            Log.Write();
+            AvatarListMessage avatarListMessage = new AvatarListMessage();
+            int numberOfAvatars = binaryReader.ReadInt32();
+            for (int i = 0; i < numberOfAvatars; ++i)
+            {
+                Avatar avatar = Avatar.Read(binaryReader);
+                avatarListMessage.avatars.Add(avatar);
+            }
+            return avatarListMessage;
+        }
+
+        #endregion
+
+    }
+}

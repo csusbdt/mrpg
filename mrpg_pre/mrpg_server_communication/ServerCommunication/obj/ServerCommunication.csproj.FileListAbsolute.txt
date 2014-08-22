@@ -1,0 +1,10 @@
+C:\_\mrpg\mrpg_server_communication\CommunicationSystem\bin\Debug\CommunicationSystem.dll
+C:\_\mrpg\mrpg_server_communication\CommunicationSystem\bin\Debug\CommunicationSystem.pdb
+C:\_\mrpg\mrpg_server_communication\CommunicationSystem\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\mrpg_server_communication\CommunicationSystem\obj\Debug\CommunicationSystem.dll
+C:\_\mrpg\mrpg_server_communication\CommunicationSystem\obj\Debug\CommunicationSystem.pdb
+C:\_\mrpg\mrpg_server_communication\ServerCommunication\bin\Debug\ServerCommunication.dll
+C:\_\mrpg\mrpg_server_communication\ServerCommunication\bin\Debug\ServerCommunication.pdb
+C:\_\mrpg\mrpg_server_communication\ServerCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\mrpg_server_communication\ServerCommunication\obj\Debug\ServerCommunication.dll
+C:\_\mrpg\mrpg_server_communication\ServerCommunication\obj\Debug\ServerCommunication.pdb

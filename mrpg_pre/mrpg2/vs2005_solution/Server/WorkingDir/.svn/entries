@@ -1,0 +1,41 @@
+8
+
+dir
+17
+https://web8.ias.csusb.edu:8443/mrpg2/vs2005_solution/Server/WorkingDir
+https://web8.ias.csusb.edu:8443/mrpg2
+
+
+
+2008-05-30T06:13:32.137713Z
+1
+turner
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c12a484b-161d-4361-ac14-a8c34f650a00
+
+MySql.Data.dll
+file
+
+
+
+
+2008-06-08T06:23:19.953125Z
+156950f69ab005707e461b3a851af6ca
+2008-05-30T06:13:32.137713Z
+1
+turner
+has-props
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Comm
+END
+LoginMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Comm/LoginMessage.cs
+END
+ExitGamePlayMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Comm/ExitGamePlayMessage.cs
+END
+LogoutMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Comm/LogoutMessage.cs
+END
+AvatarSelectMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Comm/AvatarSelectMessage.cs
+END
+Message.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Comm/Message.cs
+END

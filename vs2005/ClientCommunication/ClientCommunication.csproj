@@ -1,0 +1,75 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0624F604-1B3C-4806-BC9F-51ED8AB530DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClientCommunication</RootNamespace>
+    <AssemblyName>ClientCommunication</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCapabilityMessage.cs" />
+    <Compile Include="AddItemToInventoryMessage.cs" />
+    <Compile Include="Avatar.cs" />
+    <Compile Include="AvatarListMessage.cs" />
+    <Compile Include="CommunicationSystem.cs" />
+    <Compile Include="CreateItemListMessage.cs" />
+    <Compile Include="CreateModeledEntityMessage.cs" />
+    <Compile Include="CreatePcMessage.cs" />
+    <Compile Include="DeleteEntityMessage.cs" />
+    <Compile Include="RemoveItemFromListMessage.cs" />
+    <Compile Include="DieMessage.cs" />
+    <Compile Include="CreateActionMessage.cs" />
+    <Compile Include="AddItemToListMessage.cs" />
+    <Compile Include="LoginFailureMessage.cs" />
+    <Compile Include="LoginSuccessMessage.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MoveEntityMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveCapabilityMessage.cs" />
+    <Compile Include="RemoveItemFromInventoryMessage.cs" />
+    <Compile Include="StopActionMessage.cs" />
+    <Compile Include="SetHealthMessage.cs" />
+    <Compile Include="SetManaMessage.cs" />
+    <Compile Include="SetMapMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommunicationMessageTypes\CommunicationMessageTypes.csproj">
+      <Project>{D3359D1B-17C9-4B97-ADF3-B12447BC444C}</Project>
+      <Name>CommunicationMessageTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

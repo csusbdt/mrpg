@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+
+namespace Client
+{
+    class CreateEntityMessage : Message
+    {
+        Entity entity;
+
+        public Entity Entity
+        {
+            get { return entity; }
+        }
+
+        CreateEntityMessage()
+        {
+        }
+
+        public static Message Read(BinaryReader binaryReader)
+        {
+            Log.Write();
+            CreateEntityMessage createEntityMessage = new CreateEntityMessage();
+            createEntityMessage.entity = Entity.Read(binaryReader);
+            return createEntityMessage;
+        }
+    }
+}

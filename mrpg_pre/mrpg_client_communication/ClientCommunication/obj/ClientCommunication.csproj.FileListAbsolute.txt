@@ -1,0 +1,5 @@
+C:\_\mrpg\mrpg_client_communication\ClientCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\mrpg_client_communication\ClientCommunication\bin\Debug\ClientCommunication.dll
+C:\_\mrpg\mrpg_client_communication\ClientCommunication\bin\Debug\ClientCommunication.pdb
+C:\_\mrpg\mrpg_client_communication\ClientCommunication\obj\Debug\ClientCommunication.dll
+C:\_\mrpg\mrpg_client_communication\ClientCommunication\obj\Debug\ClientCommunication.pdb

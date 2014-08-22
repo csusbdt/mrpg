@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem
+END
+InMemoryMesh.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/InMemoryMesh.cs
+END
+Mesh.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/Mesh.cs
+END
+InMemoryModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/InMemoryModel.cs
+END
+Model.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/Model.cs
+END
+ModelSystem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/ModelSystem.cs
+END
+ThreeDSModelLoader.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/ThreeDSModelLoader.cs
+END
+InMemoryMeshCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/InMemoryMeshCollection.cs
+END
+MeshCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/mrpg2/!svn/ver/5/vs2005_solution/Client/ModelSystem/MeshCollection.cs
+END

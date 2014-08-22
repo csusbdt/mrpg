@@ -1,0 +1,11 @@
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\bin\Debug\CommunicationTest.exe
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\bin\Debug\CommunicationTest.pdb
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\bin\Debug\ClientCommunication.dll
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\bin\Debug\ServerCommunication.dll
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\bin\Debug\ClientCommunication.pdb
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\bin\Debug\ServerCommunication.pdb
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\obj\Debug\CommunicationTest.exe
+C:\_\mrpg\mrpg_communication_test\CommunicationTest\obj\Debug\CommunicationTest.pdb
+C:\_\mrpg_pre\mrpg_communication_test\CommunicationTest\obj\Debug\CommunicationTest.exe
+C:\_\mrpg_pre\mrpg_communication_test\CommunicationTest\obj\Debug\CommunicationTest.pdb

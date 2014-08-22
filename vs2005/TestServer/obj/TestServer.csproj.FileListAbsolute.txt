@@ -1,0 +1,5 @@
+C:\_\mrpg\vs2005\TestServer\bin\Debug\TestServer.exe
+C:\_\mrpg\vs2005\TestServer\bin\Debug\TestServer.pdb
+C:\_\mrpg\vs2005\TestServer\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\vs2005\TestServer\obj\Debug\TestServer.exe
+C:\_\mrpg\vs2005\TestServer\obj\Debug\TestServer.pdb

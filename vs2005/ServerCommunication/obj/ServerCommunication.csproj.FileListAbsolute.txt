@@ -1,0 +1,7 @@
+C:\_\mrpg\vs2005\ServerCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\vs2005\ServerCommunication\bin\Debug\ServerCommunication.dll
+C:\_\mrpg\vs2005\ServerCommunication\bin\Debug\ServerCommunication.pdb
+C:\_\mrpg\vs2005\ServerCommunication\obj\Debug\ServerCommunication.dll
+C:\_\mrpg\vs2005\ServerCommunication\obj\Debug\ServerCommunication.pdb
+C:\_\mrpg\vs2005\ServerCommunication\bin\Debug\CommunicationMessageTypes.dll
+C:\_\mrpg\vs2005\ServerCommunication\bin\Debug\CommunicationMessageTypes.pdb

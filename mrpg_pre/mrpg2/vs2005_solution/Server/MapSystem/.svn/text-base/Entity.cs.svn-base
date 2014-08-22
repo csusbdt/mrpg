@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+
+namespace Server
+{
+    class Entity
+    {
+        #region Fields
+
+        private string entityId;
+        private string entityClass;
+        private Vec3f position;
+        private Vec3f orientation;
+        
+        #endregion
+
+        #region Properties
+
+        public string EntityId
+        {
+            get { return entityId; }
+        }
+
+        public string EntityClass
+        {
+            get { return entityClass; }
+        }
+
+        public Vec3f Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+
+        public Vec3f Orientation
+        {
+            get { return orientation; }
+            set { orientation = value; }
+        }
+
+        #endregion
+
+        #region Initialization
+
+        public Entity(string entityId, string entityClass)
+            : this(entityId, entityClass, new Vec3f(), new Vec3f())
+        {
+        }
+
+        public Entity(string entityId, string entityClass, Vec3f position, Vec3f orientation)
+        {
+            this.entityId = entityId;
+            this.entityClass = entityClass;
+            this.position = position;
+            this.orientation = orientation;
+        }
+
+        #endregion
+
+        //#region Communications
+
+        //public void Write(BinaryWriter binaryWriter)
+        //{
+        //    binaryWriter.Write(entityId);
+        //    binaryWriter.Write(entityClass);
+        //    position.Write(binaryWriter);
+        //    orientation.Write(binaryWriter);
+        //}
+
+        //#endregion
+
+        #region Update
+
+        public void Update(TimeSpan dt)
+        {
+        }
+
+        #endregion
+    }
+}

@@ -1,0 +1,9 @@
+C:\_\mrpg2\vs2005_solution\Server\bin\Debug\Server.exe
+C:\_\mrpg2\vs2005_solution\Server\bin\Debug\Server.pdb
+C:\_\mrpg2\vs2005_solution\Server\bin\Debug\MySql.Data.dll
+C:\_\mrpg2\vs2005_solution\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg2\vs2005_solution\Server\obj\Debug\Server.exe
+C:\_\mrpg2\vs2005_solution\Server\obj\Debug\Server.pdb
+C:\_\mrpg\mrpg2\vs2005_solution\Server\obj\Debug\Server.exe
+C:\_\mrpg\mrpg2\vs2005_solution\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\mrpg_pre\mrpg2\vs2005_solution\Server\obj\Debug\Server.exe

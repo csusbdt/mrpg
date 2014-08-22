@@ -1,0 +1,244 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Net.Sockets;
+using System.Threading;
+using System.IO;
+
+namespace Server
+{
+    class Client
+    {
+        #region Fields
+
+        bool dead = false;
+        string username;
+        TcpClient tcpClient;
+        Thread queueUpIncomingMessagesThread;
+        BinaryWriter binaryWriter;
+        BinaryReader binaryReader;
+        List<Message> incomingMessageQueue = new List<Message>();
+        ClientState clientState = null;
+        Avatar avatar;
+        Map map;
+
+        #endregion
+
+        #region Properties
+
+        public ClientState ClientState
+        {
+            get { return clientState; }
+            set { clientState = value; }
+        }
+
+        public bool Dead
+        {
+            get { return dead; }
+            set { dead = value; if (value == true) tcpClient.Close(); }
+        }
+
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
+        public Avatar Avatar
+        {
+            get { return avatar; }
+            set { avatar = value; }
+        }
+
+        public Map Map
+        {
+            get { return map; }
+            set { map = value; }
+        }
+
+        #endregion
+
+        #region Life Cycle
+
+        public Client(TcpClient tcpClient)
+        {
+            this.tcpClient = tcpClient;
+            NetworkStream networkStream = tcpClient.GetStream();
+            BufferedStream bufferedStream = new BufferedStream(networkStream);
+            binaryWriter = new BinaryWriter(bufferedStream);
+            binaryReader = new BinaryReader(bufferedStream);
+            ThreadStart threadStart = new ThreadStart(QueueUpIncomingMessages);
+            queueUpIncomingMessagesThread = new Thread(threadStart);
+            queueUpIncomingMessagesThread.Start();
+            clientState = new PreLoginState(this);
+        }
+
+        public void Shutdown()
+        {
+            dead = true;
+            tcpClient.Close();
+        }
+
+        public void Update(TimeSpan dt)
+        {
+            clientState.Update(dt);
+            //ClientState newState = clientState.Update(dt);
+            //if (newState != null)
+            //{
+            //    newState.Activate();
+            //    clientState = newState;
+            //}
+        }
+
+        #endregion
+
+        #region Message Handling
+
+        void QueueUpIncomingMessages()
+        {
+            while (true)
+            {
+                Message message = null;
+                try
+                {
+                    message = ReadMessage();
+                }
+                catch (SocketException)
+                {
+                    dead = true;
+                    tcpClient.Close();
+                    return;
+                }
+                catch (IOException)
+                {
+                    dead = true;
+                    tcpClient.Close();
+                    return;
+                }
+                lock (incomingMessageQueue)
+                {
+                    incomingMessageQueue.Add(message);
+                }
+            }
+        }
+
+        Message ReadMessage()
+        {
+            string messageType = binaryReader.ReadString();
+            Log.Write(this, "Message received of type " + messageType);
+            switch (messageType)
+            {
+                case "login": return LoginMessage.Read(binaryReader);
+                case "logout": return LogoutMessage.Read(binaryReader);
+                case "avatar_select": return AvatarSelectMessage.Read(binaryReader);
+                case "exit": return ExitGamePlayMessage.Read(binaryReader);
+                default: throw new Exception("Invalid message from client.");
+            }
+        }
+
+        public Message GetNextMessage()
+        {
+            if (incomingMessageQueue.Count == 0)
+            {
+                return null;
+            }
+            Message message = null;
+            lock (incomingMessageQueue)
+            {
+                message = incomingMessageQueue[0];
+                incomingMessageQueue.RemoveAt(0);
+            }
+            return message;
+        }
+
+        #endregion
+
+        #region Outgoing Messages
+
+        public void SendSuccessMessage()
+        {
+            Log.Write(this);
+            binaryWriter.Write("success");
+            binaryWriter.Flush();
+        }
+
+        public void SendFailureMessage()
+        {
+            Log.Write(this);
+            binaryWriter.Write("failure");
+            binaryWriter.Flush();
+        }
+
+        public void SendAvatarListMessage(List<Avatar> avatarList)
+        {
+            Log.Write(this);
+            binaryWriter.Write("avatar_list");
+            binaryWriter.Write(avatarList.Count);
+            foreach (Avatar avatar in avatarList)
+            {
+                binaryWriter.Write(avatar.AvatarId);
+                binaryWriter.Write(avatar.AvatarClass);
+                avatar.Position.Write(binaryWriter);
+                avatar.Orientation.Write(binaryWriter);
+                binaryWriter.Write(avatar.HealthPoints);
+                binaryWriter.Write(avatar.Inventory.Count);
+                foreach (Entity entity in avatar.Inventory)
+                {
+                    binaryWriter.Write(entity.EntityId);
+                    binaryWriter.Write(entity.EntityClass);
+                    entity.Position.Write(binaryWriter);
+                    entity.Orientation.Write(binaryWriter);
+                }
+            }
+            binaryWriter.Flush();
+        }
+
+        public void SendSetMapMessage(Map map)
+        {
+            Log.Write(this);
+            binaryWriter.Write("set_map");
+            binaryWriter.Write(map.MapId);
+            binaryWriter.Flush();
+        }
+
+        public void SendCreateEntityMessage(Entity entity)
+        {
+            Log.Write(this);
+            binaryWriter.Write("create_entity");
+            binaryWriter.Write(entity.EntityId);
+            binaryWriter.Write(entity.EntityClass);
+            entity.Position.Write(binaryWriter);
+            entity.Orientation.Write(binaryWriter);
+            binaryWriter.Flush();
+        }
+
+        public void SendDeleteEntityMessage(Entity entity)
+        {
+            Log.Write(this);
+            binaryWriter.Write("delete_entity");
+            binaryWriter.Write(entity.EntityId);
+            binaryWriter.Flush();
+        }
+
+        public void SendMoveEntityMessage(Entity entity)
+        {
+            Log.Write(this);
+            binaryWriter.Write("move_entity");
+            binaryWriter.Write(entity.EntityId);
+            entity.Position.Write(binaryWriter);
+            entity.Orientation.Write(binaryWriter);
+            binaryWriter.Flush();
+        }
+
+        public void SendMoveAvatarMessage()
+        {
+            Log.Write(this);
+            binaryWriter.Write("move_avatar");
+            avatar.Position.Write(binaryWriter);
+            avatar.Orientation.Write(binaryWriter);
+            binaryWriter.Flush();
+        }
+
+        #endregion
+    }
+}

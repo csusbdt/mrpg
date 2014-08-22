@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Dao
+END
+DbConnectionFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Dao/DbConnectionFactory.cs
+END
+InventoryDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Dao/InventoryDao.cs
+END
+AvatarDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Dao/AvatarDao.cs
+END
+LoginCredentialsDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/5/vs2005_solution/Server/Dao/LoginCredentialsDao.cs
+END

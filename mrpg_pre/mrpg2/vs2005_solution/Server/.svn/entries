@@ -1,0 +1,91 @@
+8
+
+dir
+17
+https://web8.ias.csusb.edu:8443/mrpg2/vs2005_solution/Server
+https://web8.ias.csusb.edu:8443/mrpg2
+
+
+
+2008-06-06T04:36:52.936883Z
+17
+turner
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c12a484b-161d-4361-ac14-a8c34f650a00
+
+WorkingDir
+dir
+
+VTune
+dir
+
+ClientStates
+dir
+
+MapSystem
+dir
+
+Client.cs
+file
+
+
+
+
+2008-06-08T06:23:21.156250Z
+b6b4b33c3e8f56e60d80d6a0933c49f8
+2008-06-06T04:36:52.936883Z
+17
+turner
+
+Dao
+dir
+
+Server.csproj
+file
+
+
+
+
+2008-06-08T06:23:21.156250Z
+5e8f178e15ee25512785b8004aa8895c
+2008-05-30T06:13:32.137713Z
+1
+turner
+
+Data
+dir
+
+Comm
+dir
+
+Program.cs
+file
+
+
+
+
+2008-06-08T06:23:21.156250Z
+638ee5583c0c529e54a3b07d736d3ed2
+2008-05-30T06:13:32.137713Z
+1
+turner
+
+Properties
+dir
+
+Util
+dir
+

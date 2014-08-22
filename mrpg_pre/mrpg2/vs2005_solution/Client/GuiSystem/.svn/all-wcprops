@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mrpg2/!svn/ver/15/vs2005_solution/Client/GuiSystem
+END
+Button.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/mrpg2/!svn/ver/15/vs2005_solution/Client/GuiSystem/Button.cs
+END
+Image.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/Image.cs
+END
+Text.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/Text.cs
+END
+TextInput.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/TextInput.cs
+END
+Font.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/Font.cs
+END
+FrameRate.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/FrameRate.cs
+END
+GuiComponent.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/GuiComponent.cs
+END
+ScreenCoordinate.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/ScreenCoordinate.cs
+END
+GuiSystem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/mrpg2/!svn/ver/15/vs2005_solution/Client/GuiSystem/GuiSystem.cs
+END
+AvatarSelectButton.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/mrpg2/!svn/ver/15/vs2005_solution/Client/GuiSystem/AvatarSelectButton.cs
+END
+GuiTextureSystem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/mrpg2/!svn/ver/15/vs2005_solution/Client/GuiSystem/GuiTextureSystem.cs
+END
+RGB.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/mrpg2/!svn/ver/5/vs2005_solution/Client/GuiSystem/RGB.cs
+END

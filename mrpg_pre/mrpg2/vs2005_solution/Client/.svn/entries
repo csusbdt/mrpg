@@ -1,0 +1,97 @@
+8
+
+dir
+17
+https://web8.ias.csusb.edu:8443/mrpg2/vs2005_solution/Client
+https://web8.ias.csusb.edu:8443/mrpg2
+
+
+
+2008-06-06T04:22:02.313429Z
+16
+turner
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c12a484b-161d-4361-ac14-a8c34f650a00
+
+WorkingDir
+dir
+
+Graphics
+dir
+
+VTune
+dir
+
+States
+dir
+
+ModelSystem
+dir
+
+TextureSystem
+dir
+
+GuiSystem
+dir
+
+Client.csproj.user
+file
+
+
+
+
+2008-06-08T06:24:10.796875Z
+07bf738cd652d7221a76e28365771218
+2008-06-06T04:22:02.313429Z
+16
+turner
+
+Comm
+dir
+
+Program.cs
+file
+
+
+
+
+2008-06-08T06:24:10.796875Z
+2dd356eb81b3a610c8878b2ed5fbaecd
+2008-06-05T18:35:08.513943Z
+15
+gtrang
+
+Properties
+dir
+
+SoundSystem
+dir
+
+Util
+dir
+
+Client.csproj
+file
+
+
+
+
+2008-06-08T06:24:10.796875Z
+107c42121759cb2faad4c7db8d69bf87
+2008-06-06T04:22:02.313429Z
+16
+turner
+

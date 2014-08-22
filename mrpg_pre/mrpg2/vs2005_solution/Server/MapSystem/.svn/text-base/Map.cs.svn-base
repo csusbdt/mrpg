@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+
+namespace Server
+{
+    class Map
+    {
+        #region Fields
+
+        string mapId;
+        Dictionary<string, Entity> entityDictionary = new Dictionary<string, Entity>();
+
+        #endregion
+
+        #region Properties
+
+        public string MapId
+        {
+            get { return mapId; }
+        }
+
+        public Dictionary<string, Entity> EntityDictionary
+        {
+            get { return entityDictionary; }
+            set { entityDictionary = value; }
+        }
+
+        #endregion
+
+        #region Life Cycle
+
+        public Map(string mapId)
+        {
+            this.mapId = mapId;
+        }
+
+        public void Update(TimeSpan dt)
+        {
+            foreach (Entity entity in entityDictionary.Values)
+            {
+                entity.Update(dt);
+            }
+        }
+
+        #endregion
+
+        //#region Communications
+
+        //public void Write(BinaryWriter binaryWriter)
+        //{
+        //    binaryWriter.Write(mapId);
+        //}
+
+        //#endregion
+    }
+}

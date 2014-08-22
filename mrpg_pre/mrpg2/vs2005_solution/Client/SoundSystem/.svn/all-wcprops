@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem
+END
+SoundSystem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem/SoundSystem.cs
+END
+Music.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem/Music.cs
+END
+SpatialSound.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem/SpatialSound.cs
+END
+AmbientChannel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem/AmbientChannel.cs
+END
+AmbientSound.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem/AmbientSound.cs
+END
+OpenAlBuffer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem/OpenAlBuffer.cs
+END
+Sound.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/mrpg2/!svn/ver/5/vs2005_solution/Client/SoundSystem/Sound.cs
+END

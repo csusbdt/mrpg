@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/mrpg2/!svn/ver/16/vs2005_solution/Client/Comm
+END
+FailureMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/mrpg2/!svn/ver/16/vs2005_solution/Client/Comm/FailureMessage.cs
+END
+SuccessMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/mrpg2/!svn/ver/16/vs2005_solution/Client/Comm/SuccessMessage.cs
+END
+SetMapMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/mrpg2/!svn/ver/5/vs2005_solution/Client/Comm/SetMapMessage.cs
+END
+AvatarListMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/16/vs2005_solution/Client/Comm/AvatarListMessage.cs
+END
+DeleteEntityMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/mrpg2/!svn/ver/10/vs2005_solution/Client/Comm/DeleteEntityMessage.cs
+END
+Message.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/mrpg2/!svn/ver/16/vs2005_solution/Client/Comm/Message.cs
+END
+CreateEntityMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Client/Comm/CreateEntityMessage.cs
+END
+MoveEntityMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/10/vs2005_solution/Client/Comm/MoveEntityMessage.cs
+END
+CommunicationSystem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/mrpg2/!svn/ver/10/vs2005_solution/Client/Comm/CommunicationSystem.cs
+END
+MoveAvatarMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/mrpg2/!svn/ver/10/vs2005_solution/Client/Comm/MoveAvatarMessage.cs
+END

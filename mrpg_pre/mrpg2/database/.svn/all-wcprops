@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/mrpg2/!svn/ver/1/database
+END
+create_tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/mrpg2/!svn/ver/1/database/create_tables.sql
+END

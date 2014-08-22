@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/mrpg2/!svn/ver/10/vs2005_solution/Server/ClientStates
+END
+ClientState.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/mrpg2/!svn/ver/5/vs2005_solution/Server/ClientStates/ClientState.cs
+END
+GamePlayState.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/mrpg2/!svn/ver/10/vs2005_solution/Server/ClientStates/GamePlayState.cs
+END
+PreLoginState.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/mrpg2/!svn/ver/5/vs2005_solution/Server/ClientStates/PreLoginState.cs
+END
+AvatarSelectionState.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/mrpg2/!svn/ver/5/vs2005_solution/Server/ClientStates/AvatarSelectionState.cs
+END

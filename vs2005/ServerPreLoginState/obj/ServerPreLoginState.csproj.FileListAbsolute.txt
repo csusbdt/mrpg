@@ -1,0 +1,9 @@
+C:\_\mrpg\vs2005\ServerPreLoginState\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\vs2005\ServerPreLoginState\bin\Debug\ServerPreLoginState.dll
+C:\_\mrpg\vs2005\ServerPreLoginState\bin\Debug\ServerPreLoginState.pdb
+C:\_\mrpg\vs2005\ServerPreLoginState\bin\Debug\Server.exe
+C:\_\mrpg\vs2005\ServerPreLoginState\bin\Debug\ServerCommunication.dll
+C:\_\mrpg\vs2005\ServerPreLoginState\bin\Debug\ServerCommunication.pdb
+C:\_\mrpg\vs2005\ServerPreLoginState\bin\Debug\Server.pdb
+C:\_\mrpg\vs2005\ServerPreLoginState\obj\Debug\ServerPreLoginState.dll
+C:\_\mrpg\vs2005\ServerPreLoginState\obj\Debug\ServerPreLoginState.pdb

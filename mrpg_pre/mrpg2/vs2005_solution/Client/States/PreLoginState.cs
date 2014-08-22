@@ -1,0 +1,162 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Client
+{
+    class PreLoginState : ClientState
+    {
+        #region Fields
+
+        delegate void UpdateMethod(TimeSpan dt);
+        UpdateMethod updateMethod;
+        List<IDisposable> disposables = new List<IDisposable>();
+
+        // Gui Components
+        Button loginButton;
+        Image usernameTextImage;
+        Image passwordTextImage;
+        FrameRate frameRate;
+        TextInput userNameTextInput;
+        TextInput passwordTextInput;
+
+        #endregion
+
+        #region Life Cycle
+
+        public void Activate()
+        {
+            Log.Write(this);
+            updateMethod = WaitingForUserLogin;
+            Camera.Position = new Vec3f(0, 0, 10);
+
+            // Login Button
+            //PixelContainer loginButtonPixelContainer = TargaImageLoader.LoadImage("gui/loginButtonTexture.tga");
+            //Texture loginButtonTexture = new Texture(loginButtonPixelContainer);
+            //disposables.Add(loginButtonTexture);
+            Texture loginButtonTexture = GuiTextureSystem.GetTextureById("loginButton");
+            ScreenCoordinate loginButtonLowerLeft = new ScreenCoordinate(290, 220);
+            ScreenCoordinate loginButtonUpperRight = new ScreenCoordinate(379, 260);
+            loginButton = new Button(
+                loginButtonLowerLeft, 
+                loginButtonUpperRight,
+                loginButtonTexture, 
+                LoginButtonHandler);
+            GuiSystem.AddButton(loginButton);
+
+            // Frame Rate
+            ScreenCoordinate frameRateLowerLeft = new ScreenCoordinate(30, 400);
+            ScreenCoordinate frameRateUpperRight = new ScreenCoordinate(100, 440);
+            frameRate = new FrameRate(frameRateLowerLeft, frameRateUpperRight, null);
+            GuiSystem.AddText(frameRate);
+
+            // Username Image
+//            PixelContainer usernameTextPixelContainer = TargaImageLoader.LoadImage("gui/usernameTextTexture.tga");
+//            Texture usernameTextTexture = new Texture(usernameTextPixelContainer);
+//            disposables.Add(usernameTextTexture);
+            Texture usernameTextTexture = GuiTextureSystem.GetTextureById("usernameText");
+            ScreenCoordinate usernameTextLowerLeft = new ScreenCoordinate(190, 300);
+            usernameTextImage = new Image(usernameTextTexture, usernameTextLowerLeft);
+            GuiSystem.AddImage(usernameTextImage);
+
+            // Username Text Input
+            ScreenCoordinate userNameTextInputLowerLeft = new ScreenCoordinate(270, 300);
+            ScreenCoordinate userNameTextInputUpperRight = new ScreenCoordinate(390, 320);
+            userNameTextInput = new TextInput(userNameTextInputLowerLeft, userNameTextInputUpperRight, null, "");
+            userNameTextInput.TrimToLength = 16;
+            GuiSystem.AddText(userNameTextInput);
+
+            // Password Image
+            //PixelContainer passwordTextPixelContainer = TargaImageLoader.LoadImage("gui/passwordTextTexture.tga");
+            //Texture passwordTextTexture = new Texture(passwordTextPixelContainer);
+            //disposables.Add(passwordTextTexture);
+            Texture passwordTextTexture = GuiTextureSystem.GetTextureById("passwordText");
+            ScreenCoordinate passwordTextLowerLeft = new ScreenCoordinate(190, 275);
+            passwordTextImage = new Image(passwordTextTexture, passwordTextLowerLeft);
+            GuiSystem.AddImage(passwordTextImage);
+
+            // Password Text Input
+            ScreenCoordinate passwordTextInputLowerLeft = new ScreenCoordinate(270, 275);
+            ScreenCoordinate passwordTextInputUpperRight = new ScreenCoordinate(390, 295);
+            passwordTextInput = new TextInput(passwordTextInputLowerLeft, passwordTextInputUpperRight, null, "");
+            passwordTextInput.IsPassword = true;
+            passwordTextInput.TrimToLength = 16;
+            GuiSystem.AddText(passwordTextInput);
+        }
+
+        public void TransitionToAvatarSelectionState()
+        {
+            Log.Write(this);
+            GuiSystem.Clear();
+            foreach (IDisposable disposable in disposables)
+            {
+                disposable.Dispose();
+            }
+            GuiTextureSystem.UnloadAllTextures();
+            GC.Collect();
+            AvatarSelectionState avatarSelectionState = new AvatarSelectionState();
+            Program.ClientState = avatarSelectionState;
+            avatarSelectionState.Activate();
+        }
+
+        public void Update(TimeSpan dt)
+        {
+            updateMethod(dt);
+        }
+
+        #endregion
+
+        #region Gui Event Handlers
+
+        private void LoginButtonHandler()
+        {
+            Log.Write(this);
+            //SoundSystem.PlaySound("");
+            loginButton.Enabled = false;
+            CommunicationSystem.Connect();
+            string username = userNameTextInput.TextValue;
+            string password = passwordTextInput.TextValue;
+            CommunicationSystem.SendLoginMessage(username, password);
+            updateMethod = WaitingForResult;
+        }
+
+        #endregion
+
+        #region Update Methods
+
+        private void WaitingForUserLogin(TimeSpan dt)
+        {
+        }
+
+        private void WaitingForResult(TimeSpan dt)
+        {
+            Message message = CommunicationSystem.GetNextMessage();
+            if (message == null)
+            {
+                return;
+            }
+            // Drop any spurious game play messages.
+            if (message.IsGamePlayMessage)
+            {
+                return;
+            }
+            if (message is LoginSuccessMessage)
+            {
+                TransitionToAvatarSelectionState();
+            }
+            else if (message is LoginFailureMessage)
+            {
+                Log.Write(this, "Login failed.");
+                CommunicationSystem.Disconnect();
+                loginButton.Enabled = true;
+                updateMethod = WaitingForUserLogin;
+            }
+            else
+            {
+                throw new Exception("Invalid server response.");
+            }
+        }
+
+        #endregion
+    }
+}

@@ -1,0 +1,10 @@
+C:\_\mrpg\vs2005\TestCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\vs2005\TestCommunication\bin\Debug\TestCommunication.exe
+C:\_\mrpg\vs2005\TestCommunication\bin\Debug\TestCommunication.pdb
+C:\_\mrpg\vs2005\TestCommunication\bin\Debug\ClientCommunication.dll
+C:\_\mrpg\vs2005\TestCommunication\bin\Debug\ServerCommunication.dll
+C:\_\mrpg\vs2005\TestCommunication\bin\Debug\ClientCommunication.pdb
+C:\_\mrpg\vs2005\TestCommunication\bin\Debug\ServerCommunication.pdb
+C:\_\mrpg\vs2005\TestCommunication\obj\Debug\TestCommunication.exe
+C:\_\mrpg\vs2005\TestCommunication\obj\Debug\TestCommunication.pdb
+C:\_\mrpg\vs2005\TestCommunication\bin\Debug\TestCommunication.exe.config

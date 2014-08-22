@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Tao.OpenGl;
+using System.IO;
+
+namespace Client
+{
+    class Entity
+    {
+        string entityId;
+        string entityClass;
+        Vec3f position;
+        Vec3f orientation;
+        Texture texture;
+        Model model;
+
+        public string EntityId
+        {
+            get { return entityId; }
+        }
+
+        public string EntityClass
+        {
+            get { return entityClass; }
+        }
+
+        public Vec3f Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+
+        public Vec3f Orientation
+        {
+            get { return orientation; }
+            set { orientation = value; }
+        }
+
+        Entity()
+        {
+        }
+
+        // This method is used by map -- remove this after re-organizing map.
+        //public Entity(Model model, Texture texture)
+        //{
+        //    this.model = model;
+        //    this.texture = texture;
+        //}
+
+        public void Update(TimeSpan dt)
+        {
+        }
+
+        public void Draw()
+        {
+            Gl.glTranslatef(position.x, position.y, position.z);
+            Gl.glRotatef(orientation.x, 1, 0, 0);
+            Gl.glRotatef(orientation.y, 0, 1, 0);
+            Gl.glRotatef(orientation.z, 0, 0, 1);
+            texture.Bind();
+            model.Draw();
+        }
+
+        #region Read
+
+        public static Entity Read(BinaryReader binaryReader)
+        {
+            Log.Write();
+            Entity entity = new Entity();
+            entity.entityId = binaryReader.ReadString();
+            entity.entityClass = binaryReader.ReadString();
+            entity.position = Vec3f.Read(binaryReader);
+            entity.orientation = Vec3f.Read(binaryReader);
+            if (!TextureSystem.ModelTextureDictionary.ContainsKey(entity.entityClass))
+            {
+                throw new Exception("Entity class " + entity.entityClass + " not in model texture dictionary");
+            }
+            if (!ModelSystem.ModelDictionary.ContainsKey(entity.entityClass))
+            {
+                throw new Exception("Entity class " + entity.entityClass + " not in model dictionary");
+            }
+            entity.texture = TextureSystem.ModelTextureDictionary[entity.entityClass];
+            entity.model = ModelSystem.ModelDictionary[entity.entityClass];
+            return entity;
+        }
+
+        #endregion
+    }
+}

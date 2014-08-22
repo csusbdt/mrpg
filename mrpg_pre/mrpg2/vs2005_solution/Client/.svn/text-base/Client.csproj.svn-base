@@ -1,0 +1,120 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AC87FF8-C038-4355-9A9C-838270B47797}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tao.FreeType, Version=2.3.5.0, Culture=neutral, PublicKeyToken=e499629dc69cd531, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>WorkingDir\Tao.FreeType.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenAl, Version=1.1.0.1, Culture=neutral, PublicKeyToken=a7579dda88828311, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>WorkingDir\Tao.OpenAl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=2.1.0.12, Culture=neutral, PublicKeyToken=1ca010269a4501ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>WorkingDir\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Sdl, Version=1.2.13.0, Culture=neutral, PublicKeyToken=9c7a200e36c0094e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>WorkingDir\Tao.Sdl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comm\AvatarListMessage.cs" />
+    <Compile Include="Comm\CommunicationSystem.cs" />
+    <Compile Include="Comm\CreateEntityMessage.cs" />
+    <Compile Include="Comm\DeleteEntityMessage.cs" />
+    <Compile Include="Comm\FailureMessage.cs" />
+    <Compile Include="Comm\Message.cs" />
+    <Compile Include="Comm\MoveAvatarMessage.cs" />
+    <Compile Include="Comm\MoveEntityMessage.cs" />
+    <Compile Include="Comm\SetMapMessage.cs" />
+    <Compile Include="Comm\SuccessMessage.cs" />
+    <Compile Include="Graphics\Avatar.cs" />
+    <Compile Include="Graphics\Camera.cs" />
+    <Compile Include="Graphics\MapComponent.cs" />
+    <Compile Include="Graphics\Entity.cs" />
+    <Compile Include="Graphics\GraphicsSystem.cs" />
+    <Compile Include="GuiSystem\AvatarSelectButton.cs" />
+    <Compile Include="GuiSystem\GuiTextureSystem.cs" />
+    <Compile Include="ModelSystem\InMemoryMesh.cs" />
+    <Compile Include="ModelSystem\InMemoryMeshCollection.cs" />
+    <Compile Include="ModelSystem\InMemoryModel.cs" />
+    <Compile Include="Graphics\Map.cs" />
+    <Compile Include="ModelSystem\Mesh.cs" />
+    <Compile Include="ModelSystem\MeshCollection.cs" />
+    <Compile Include="ModelSystem\Model.cs" />
+    <Compile Include="ModelSystem\ModelSystem.cs" />
+    <Compile Include="SoundSystem\AmbientChannel.cs" />
+    <Compile Include="SoundSystem\AmbientSound.cs" />
+    <Compile Include="SoundSystem\Music.cs" />
+    <Compile Include="SoundSystem\OpenAlBuffer.cs" />
+    <Compile Include="SoundSystem\Sound.cs" />
+    <Compile Include="SoundSystem\SoundSystem.cs" />
+    <Compile Include="SoundSystem\SpatialSound.cs" />
+    <Compile Include="TextureSystem\PixelContainer.cs" />
+    <Compile Include="TextureSystem\TargaImageLoader.cs" />
+    <Compile Include="TextureSystem\Texture.cs" />
+    <Compile Include="ModelSystem\ThreeDSModelLoader.cs" />
+    <Compile Include="GuiSystem\Button.cs" />
+    <Compile Include="GuiSystem\Font.cs" />
+    <Compile Include="GuiSystem\FrameRate.cs" />
+    <Compile Include="GuiSystem\GuiComponent.cs" />
+    <Compile Include="GuiSystem\GuiSystem.cs" />
+    <Compile Include="GuiSystem\Image.cs" />
+    <Compile Include="GuiSystem\RGB.cs" />
+    <Compile Include="GuiSystem\Text.cs" />
+    <Compile Include="GuiSystem\TextInput.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\AvatarSelectionState.cs" />
+    <Compile Include="States\ClientState.cs" />
+    <Compile Include="States\GamePlayState.cs" />
+    <Compile Include="States\PreLoginState.cs" />
+    <Compile Include="TextureSystem\TextureSystem.cs" />
+    <Compile Include="Util\Configuration.cs" />
+    <Compile Include="Util\Log.cs" />
+    <Compile Include="Util\LogicError.cs" />
+    <Compile Include="GuiSystem\ScreenCoordinate.cs" />
+    <Compile Include="Util\Vec2f.cs" />
+    <Compile Include="Util\Vec3f.cs" />
+    <Compile Include="Util\Vec3us.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

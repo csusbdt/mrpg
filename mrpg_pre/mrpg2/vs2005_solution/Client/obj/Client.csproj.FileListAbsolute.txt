@@ -1,0 +1,15 @@
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Client.exe
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Client.pdb
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.FreeType.dll
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.OpenAl.dll
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.OpenGl.dll
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.Sdl.dll
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.Sdl.xml
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.FreeType.xml
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.OpenGl.xml
+C:\_\mrpg2\vs2005_solution\Client\bin\Debug\Tao.OpenAl.xml
+C:\_\mrpg2\vs2005_solution\Client\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg2\vs2005_solution\Client\obj\Debug\Client.exe
+C:\_\mrpg2\vs2005_solution\Client\obj\Debug\Client.pdb
+C:\_\mrpg\mrpg2\vs2005_solution\Client\obj\Debug\ResolveAssemblyReference.cache
+C:\_\mrpg\mrpg2\vs2005_solution\Client\obj\Debug\Client.exe

@@ -1,0 +1,5 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartWorkingDirectory>C:\_\mrpg2\vs2005_solution\Client\WorkingDir\</StartWorkingDirectory>
+  </PropertyGroup>
+</Project>

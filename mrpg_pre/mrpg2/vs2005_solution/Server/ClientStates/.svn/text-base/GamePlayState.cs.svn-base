@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Server
+{
+    class GamePlayState : ClientState
+    {
+        public GamePlayState(Client client) : base(client)
+        {
+        }
+
+        public override void Activate()
+        {
+            Log.Write();
+            client.Map = MapSystem.MapDictionary["home"];
+            client.Avatar.Position = new Vec3f(0, 0, 400);
+            client.SendMoveAvatarMessage();
+            client.SendSetMapMessage(client.Map);
+            Dictionary<string, Entity> entityDictionary = client.Map.EntityDictionary;
+            foreach (Entity entity in entityDictionary.Values)
+            {
+                client.SendCreateEntityMessage(entity);
+            }
+        }
+
+        void ExitGamePlayState()
+        {
+        }
+
+        public override void Update(TimeSpan dt)
+        {
+            //ClientState nextClientState = ProcessReceivedMessages();
+            if (!ProcessReceivedMessages())
+            {
+                return;
+            }
+        }
+
+        // Returns true to remain in game state; returns false to indicate state has changed.
+        bool ProcessReceivedMessages()
+        {
+            Message message = client.GetNextMessage();
+            if (message == null)
+            {
+                return true;
+            }
+            Log.Write(this, message.GetType().ToString());
+            if (message is ExitGamePlayMessage)
+            {
+                AvatarSelectionState avatarSelectionState = new AvatarSelectionState(client);
+                client.ClientState = avatarSelectionState;
+                avatarSelectionState.Activate();
+                return false;
+            }
+            else
+            {
+                throw new Exception("Invalid message from client.");
+            }
+        }
+    }
+}
